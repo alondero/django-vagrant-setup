@@ -1,7 +1,16 @@
 exec { "apt-get update":
   path => "/usr/bin",
 }
-package { "python":
-  ensure  => present,
-  require => Exec["apt-get update"],
+
+class { 'python' :
+  version    => 'system',
+  pip        => true,
+  dev        => true,
+  virtualenv => true,
+  gunicorn   => true,
+}
+
+python::pip { 'django' :
+  pkgname  => 'django',
+  ensure => present
 }
