@@ -1,2 +1,2 @@
-# rpipsp
-Python+Django web server for submitting IPS patches to a RaspberryPi to patch roms.
+# django-vagrant-setup
+Python+Django setup using Vagrant and Puppet 
